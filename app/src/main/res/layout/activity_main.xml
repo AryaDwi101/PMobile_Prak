@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    tools:context="com.arya.post3.MainActivity">
+
+
+    <ImageView
+    android:id="@+id/bar"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    app:srcCompat="@drawable/bar" />
+
+    <TextView
+        android:id="@+id/Judul1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FORM PENDAFTARAN"
+        android:textColor="#8C00FF"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/nametitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:text="Full Name:" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/rounded_edittext_bg"
+        android:text="Silahkan Isi Nama Anda"
+        android:textColor="#B6AE9F"
+        android:paddingLeft="10dp" />
+
+    <TextView
+        android:id="@+id/usertitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="Username:" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/rounded_edittext_bg"
+        android:text="Silahkan Isi Username Anda"
+        android:textColor="#B6AE9F"
+        android:paddingLeft="10dp" />
+
+    <TextView
+        android:id="@+id/agetitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="Age:" />
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/rounded_edittext_bg"
+        android:text="Silahkan masukkan Umur"
+        android:textColor="#B6AE9F"
+        android:paddingLeft="10dp" />
+
+    <TextView
+        android:id="@+id/emailtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="Email:" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/rounded_edittext_bg"
+        android:text="Silahkan isi Email"
+        android:textColor="#B6AE9F"
+        android:paddingLeft="10dp" />
+
+    <TextView
+        android:id="@+id/gendertitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="Gender:" />
+
+    <RadioGroup
+        android:id="@+id/radiogrup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+        android:id="@+id/rdb1"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="Laki-laki" />
+
+        <RadioButton
+            android:id="@+id/rdb2"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"  android:checked="false"
+            android:text="Perempuan" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/passtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="Password:" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/rounded_edittext_bg"
+        android:text="Masukkan Password"
+        android:textColor="#B6AE9F"
+        android:paddingLeft="10dp" />
+
+    <TextView
+        android:id="@+id/passretitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Confirm Password:" />
+
+    <EditText
+        android:id="@+id/repassword"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/rounded_edittext_bg"
+        android:paddingLeft="10dp"
+        android:text="Masukkan Password lagi"
+        android:textColor="#B6AE9F" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"   android:layout_marginEnd="20dp"     android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounded_button_bg"
+        android:text="Submit"
+        android:textColor="@color/white"
+        android:textSize="20sp"             android:textStyle="bold" />
+
+</LinearLayout>
