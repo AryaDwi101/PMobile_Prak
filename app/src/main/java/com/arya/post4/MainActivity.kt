@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.RadioButton
 import android.widget.TextView
-import android.widget.Toast
+import android.widget.Toast 
 import androidx.appcompat.app.AppCompatActivity
 import com.arya.post4.databinding.ActivityMainBinding
 
@@ -16,35 +16,32 @@ class MainActivity : AppCompatActivity() {
     private lateinit var dbWarga: DatabaseWarga
     private lateinit var wargaDao: WargaDao
     private lateinit var appExecutors: AppExecutor
-
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         appExecutors = AppExecutor()
         dbWarga = DatabaseWarga.getDatabase(applicationContext)
         wargaDao = dbWarga.wargaDao()
-
         setupListeners()
-
+            
         loadInitialData()
     }
-
+    
     private fun setupListeners() {
         binding.btnSubmit.setOnClickListener {
             simpanDataWarga()
         }
         binding.btnReset.setOnClickListener {
-            hapusSemuaData()
-            resetForm()
+            hapusSemuaData() 
+            resetForm() 
         }
     }
 
     private fun loadInitialData() {
         appExecutors.diskIO.execute {
             val initialData = wargaDao.getAllWarga()
-
             appExecutors.mainThread.execute {
                 updateWargaUI(initialData)
             }
@@ -80,14 +77,13 @@ class MainActivity : AppCompatActivity() {
 
             appExecutors.diskIO.execute {
                 wargaDao.insert(newWarga)
-
                 val dataTerbaru = wargaDao.getAllWarga()
 
                 appExecutors.mainThread.execute {
                     Toast.makeText(this@MainActivity, "Data berhasil disimpan!", Toast.LENGTH_SHORT).show()
-                    resetForm()
 
-                    updateWargaUI(dataTerbaru)
+                    resetForm()
+                    updateWargaUI(dataTerbaru) 
                 }
             }
         }
@@ -110,10 +106,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateWargaUI(listWarga: List<Warga>) {
         binding.containerDataWarga.removeAllViews()
+
         for (warga in listWarga) {
             val itemContainer = LinearLayout(this@MainActivity)
             itemContainer.orientation = LinearLayout.VERTICAL
-
+            
             val itemLayoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
@@ -124,7 +121,6 @@ class MainActivity : AppCompatActivity() {
             itemContainer.setPadding(32, 32, 32, 32)
             itemContainer.setBackgroundColor(Color.parseColor("#F0F0F0"))
 
-            // B. Buat TextView untuk Nama
             val tvNama = TextView(this@MainActivity).apply {
                 text = warga.namaLengkap
                 textSize = 18f
@@ -155,15 +151,18 @@ class MainActivity : AppCompatActivity() {
             itemContainer.addView(tvNik)
             itemContainer.addView(tvAlamat)
             itemContainer.addView(tvInfo)
+
             binding.containerDataWarga.addView(itemContainer)
         }
     }
-
+    
     private fun hapusSemuaData() {
         appExecutors.diskIO.execute {
-            wargaDao.deleteAllWarga()
+            wargaDao.deleteAllWarga() 
+            
             appExecutors.mainThread.execute {
-                updateWargaUI(emptyList())
+                updateWargaUI(emptyList()) 
+                
                 Toast.makeText(this@MainActivity, "Semua data berhasil direset!", Toast.LENGTH_SHORT).show()
             }
         }
