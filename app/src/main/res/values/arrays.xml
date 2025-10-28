@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="status_pernikahan_options">
+        <item>Belum Menikah</item>
+        <item>Sudah Menikah</item>
+    </string-array>
+</resources>
