@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "268241843796",
+    "firebase_url": "https://prak8-101-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "prak8-101",
+    "storage_bucket": "prak8-101.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268241843796:android:3c64f36e351b620c2e5fc1",
+        "android_client_info": {
+          "package_name": "com.arya.prak8"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWOHoln9F9t62CZFlVVkKm_DtZl0LNQ1o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
